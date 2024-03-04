@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="eng" ng-app="weatherApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Angular Weather App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="WeatherController">
+    <!-- Create Form -->
+    <form ng-submit="getWeather()">
+      <label for="city">Enter City</label>
+      <input type="text" id="city" ng-model="city" required />
+      <button type="submit">Get Weather</button>
+    </form>
+
+    <div ng-show="weatherData">
+      <h3>Weather in {{ city }}</h3>
+      <p>Temperature: {{ weatherData.temp }} °C</p>
+      <p>Description: {{ weatherData.description }}</p>
+    </div>
+  </body>
+</html>
